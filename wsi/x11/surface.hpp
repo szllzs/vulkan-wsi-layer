@@ -55,11 +55,19 @@ public:
 
    bool getWindowSizeAndDepth(VkExtent2D *windowExtent, int *depth);
 
-   xcb_connection_t *connection;
-   xcb_window_t window;
+   xcb_connection_t *get_connection()
+   {
+      return m_connection;
+   }
+
+   xcb_window_t get_window()
+   {
+      return m_window;
+   };
 
 private:
-   surface_properties properties;
+   xcb_connection_t *m_connection;
+   xcb_window_t m_window;
 };
 
 } /* namespace x11 */

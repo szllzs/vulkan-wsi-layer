@@ -34,6 +34,7 @@
 #include <vulkan/vk_layer.h>
 #include <vulkan/vk_icd.h>
 #include <vulkan/vulkan_wayland.h>
+#include <vulkan/vulkan_android.h>
 #include <xcb/xcb.h>
 #include <vulkan/vulkan_xcb.h>
 
@@ -406,7 +407,8 @@ private:
    /* VK_KHR_get_memory_requirements2 */                                                                               \
    EP(GetImageMemoryRequirements2KHR, VK_KHR_GET_MEMORY_REQUIREMENTS_2_EXTENSION_NAME, VK_API_VERSION_1_1, false)      \
    EP(GetBufferMemoryRequirements2KHR, VK_KHR_GET_MEMORY_REQUIREMENTS_2_EXTENSION_NAME, VK_API_VERSION_1_1, false)     \
-   EP(GetImageSparseMemoryRequirements2KHR, VK_KHR_GET_MEMORY_REQUIREMENTS_2_EXTENSION_NAME, VK_API_VERSION_1_1, false)
+   EP(GetImageSparseMemoryRequirements2KHR, VK_KHR_GET_MEMORY_REQUIREMENTS_2_EXTENSION_NAME, VK_API_VERSION_1_1, false)\
+   EP(GetMemoryAndroidHardwareBufferANDROID, VK_ANDROID_EXTERNAL_MEMORY_ANDROID_HARDWARE_BUFFER_EXTENSION_NAME, API_VERSION_MAX, false)
 
 /**
  * @brief Struct representing the device dispatch table.

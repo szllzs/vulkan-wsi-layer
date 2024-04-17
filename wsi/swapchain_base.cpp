@@ -431,6 +431,7 @@ VkResult swapchain_base::acquire_next_image(uint64_t timeout, VkSemaphore semaph
 
    image_status_lock.unlock();
 
+#if 0
    /* Try to signal fences/semaphores with a sync FD for optimal performance. */
    if (m_device_data.disp.get_fn<PFN_vkImportFenceFdKHR>("vkImportFenceFdKHR").has_value() &&
        m_device_data.disp.get_fn<PFN_vkImportSemaphoreFdKHR>("vkImportSemaphoreFdKHR").has_value())
@@ -487,6 +488,7 @@ VkResult swapchain_base::acquire_next_image(uint64_t timeout, VkSemaphore semaph
          }
       }
    }
+#endif
 
    /* Fallback for when importing fence/semaphore sync FDs is unsupported by the ICD. */
    VkResult retval = VK_SUCCESS;
